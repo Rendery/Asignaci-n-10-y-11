@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	int xp,sueldo;
+	char lugar;
+	//in
+	cout << "ingrese los años de experciena: " << endl;
+	cin >> xp;
+	cout << "nacio en lima? [l : nacio en lima ; f : fuera de lima]: " << endl;
+	cin >> lugar;
+	//logic
+	sueldo = ((1 <= xp) && (xp <= 5)) * ((xp / 100 * 900) + 900) + (5 < xp) * ((xp / 100 * 900) + 900);
+	sueldo = ((lugar == 'l') || (lugar == 'L')) * (sueldo + (115 / 100 * sueldo)) + ((lugar == 'f') || (lugar == 'F'))* (sueldo + (120 / 100 * sueldo));
+	//out
+	cout << sueldo << endl;
+	//ingles de ta poder
+	system("pause");
+}
