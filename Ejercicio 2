@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	long long codigo;
+	int dia, mes, ano, tipo, pere;
+	bool sera;
+	//in
+	cout << " Ingrese el codigo :" << endl;
+	cin >> codigo;
+	//logic
+	dia		= codigo / 10000000000;
+	mes		= codigo / 100000000 % 100;
+	ano		= codigo / 10000	 % 10000;
+	tipo	= codigo / 100		 % 100;
+	pere	= codigo % 100;
+	sera != pere;
+	//out
+	cout << " El dia de nacimiento es: " << dia << endl;
+	cout << " El mes de nacimiento es : " << mes << endl;
+	cout << " El a" << char(164) <<"o de nacimiento es : " << ano << endl;
+	cout << " El tipo de producto es : " << char(tipo) << endl;
+	cout << " El producto es perecible [0: NO] - [1: SI]: " << sera << endl;
+
+	system("pause");
+}
