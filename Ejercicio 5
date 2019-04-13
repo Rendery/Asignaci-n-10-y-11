@@ -1,0 +1,29 @@
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+
+int main() 
+{
+	int puntaje, sueldoMes;
+	char casa, tarjetaC, cargaFamiliar;
+	cout << "Porfavor escriba cuanto es su sueldo mensual : ";
+	cin >> sueldoMes;
+	cout << "Ahora indique el tipo de casa que tiene (P: pariente ; A: alquilada; M:propia) :";
+	cin >> casa;
+	cout << "Indique si tiene tarjeta de credito (N: no tiene ; S: si tiene) : ";
+	cin >> tarjetaC;
+	cout << "Indique si tiene carga familiar (N: no tiene ; S: si tiene) : ";
+	cin >> cargaFamiliar;
+
+	int puntosSueldo = (sueldoMes < 1500) * 6 + (sueldoMes >= 1500 && sueldoMes <= 6000) * 12 + (sueldoMes > 6000) * 18;
+	int puntosCasa = (casa == 'P' || casa == 'p') * 2 + (casa == 'A' || casa == 'a') * 5 + (casa == 'M' || casa == 'm') * 10;
+	int puntosTarjeta = (tarjetaC == 'S' || tarjetaC == 's') * 6 + (tarjetaC == 'N' || tarjetaC == 'n') * 0;
+	int puntosCFamilia = (cargaFamiliar == 'N' || cargaFamiliar == 'n') * 3 + (cargaFamiliar == 'S' || cargaFamiliar == 's') * 6;
+
+	puntaje = puntosSueldo + puntosCasa + puntosTarjeta + puntosCFamilia;
+	bool prestamo = (puntaje < 20) + (puntaje > 20);
+
+	cout << "Se le otorga el prestamo(0:No ; 1:Si) : " << prestamo << endl;
+	_getch();
+}
